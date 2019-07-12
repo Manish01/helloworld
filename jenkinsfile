@@ -12,7 +12,7 @@ pipeline {
         stage('Poll SCM') {
             steps {
                 cleanWs()
-                git 'https://github.com/ligado/hello-world-servlet.git'
+                git 'https://github.com/Manish01/JunitProject.git'
             }
         }
         stage('Build') {
@@ -37,6 +37,7 @@ pipeline {
         stage('Performace Testing') {
             steps {
                 echo 'Testing..'
+		   sh "mvn test" 
             }
         }
         stage('Deployment') {
